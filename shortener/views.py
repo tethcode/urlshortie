@@ -10,7 +10,7 @@ from django.views
 from django.utils.decorators import method_decorator
 
 
-@method_decorator(csrf_exempt, name="dispatch")
+@csrf_exempt
 @api_view(["POST"])
 def shorten_url(request):
     serializer = ShortURLSerializer(data=request.data)
