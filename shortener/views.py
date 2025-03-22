@@ -5,12 +5,9 @@ from rest_framework import status
 from .serializers import ShortURLSerializer
 from django.http import HttpResponse
 from .models import ShortURL
-from django.views.decorators.csrf import csrf_exempt
 from django.views
-from django.utils.decorators import method_decorator
 
 
-@csrf_exempt
 @api_view(["POST"])
 def shorten_url(request):
     serializer = ShortURLSerializer(data=request.data)
